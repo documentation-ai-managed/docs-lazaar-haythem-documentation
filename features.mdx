@@ -1,0 +1,105 @@
+---
+title: Features
+description: Explore the advanced features of Lazaar Haythem smart contacts management app
+---
+
+## Smart Organization
+
+Lazaar Haythem uses artificial intelligence to automatically categorize and tag your contacts based on interaction patterns, relationship types, and communication frequency. This intelligent organization helps you quickly find contacts when you need them most.
+
+<Columns cols={2}>
+  <Card title="Auto-Categorization" icon="tag" href="#">
+    Automatically sort contacts into categories like family, work, or clients.
+  </Card>
+  <Card title="Relationship Insights" icon="users" href="#">
+    Analyze communication patterns to identify important relationships.
+  </Card>
+</Columns>
+
+## Intelligent Updates
+
+The app continuously monitors for contact information changes across various sources and suggests updates to keep your database current.
+
+<Expandable title="Automatic Data Enrichment" default-open="true">
+  Lazaar Haythem scans public sources and your communication history to suggest updated contact information, such as new job titles or phone numbers.
+</Expandable>
+
+<Expandable title="Change Detection" default-open="false">
+  Receive notifications when a contact's information appears to have changed, with options to accept or reject suggested updates.
+</Expandable>
+
+## Advanced Search and Filtering
+
+<Steps>
+  <Step title="Quick Search" icon="search">
+    Use natural language queries to find contacts instantly.
+  </Step>
+  <Step title="Advanced Filters" icon="filter">
+    Filter by category, last contacted, or custom tags.
+  </Step>
+  <Step title="Saved Searches" icon="bookmark">
+    Create and save frequently used search criteria.
+  </Step>
+</Steps>
+
+<Callout kind="tip">Use voice search for hands-free contact lookup while driving or multitasking.</Callout>
+
+## Integration Capabilities
+
+Lazaar Haythem connects seamlessly with popular communication and productivity apps to enhance your contact management experience.
+
+<Tabs>
+  <Tab title="Email Clients" icon="mail">
+    Sync with Gmail, Outlook, and other email services for comprehensive contact data.
+  </Tab>
+  <Tab title="Social Media" icon="share-2">
+    Import contact information from LinkedIn, Facebook, and Twitter.
+  </Tab>
+  <Tab title="CRM Systems" icon="database">
+    Integrate with Salesforce, HubSpot, and other CRM platforms.
+  </Tab>
+</Tabs>
+
+## Privacy and Security
+
+<ExpandableGroup>
+  <Expandable title="Data Encryption">
+    All contact data is encrypted at rest and in transit using industry-standard protocols.
+  </Expandable>
+  <Expandable title="Access Controls">
+    Set granular permissions for sharing contact information with connected apps.
+  </Expandable>
+  <Expandable title="GDPR Compliance">
+    Fully compliant with data protection regulations with easy data export and deletion options.
+  </Expandable>
+</ExpandableGroup>
+
+## Customization Options
+
+Personalize Lazaar Haythem to match your workflow and preferences.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+// Example: Custom contact fields
+const customFields = {
+  'birthday': '1990-05-15',
+  'anniversary': '2015-08-20',
+  'preferredContact': 'email'
+};
+
+// Add custom fields to contact
+contact.addFields(customFields);
+  ```
+  ```python
+# Example: Custom categorization rules
+rules = [
+    {'condition': 'email_domain == "company.com"', 'category': 'work'},
+    {'condition': 'last_contacted < 30_days', 'tag': 'recent'}
+]
+
+# Apply custom rules
+contacts.apply_rules(rules)
+  ```
+</CodeGroup>
+
+<Callout kind="success">With these advanced features, Lazaar Haythem transforms basic contact management into an intelligent, proactive system that evolves with your needs.</Callout>

@@ -1,0 +1,171 @@
+---
+title: API Integration
+description: Learn how to integrate Lazaar Haythem with external services using our REST API
+---
+
+## API Overview
+
+Lazaar Haythem provides a comprehensive REST API that allows developers to integrate contact management capabilities into their applications, automate workflows, and sync data across platforms.
+
+<Columns cols={3}>
+  <Card title="RESTful Design" icon="code" href="#">
+    Standard REST endpoints with JSON responses for easy integration.
+  </Card>
+  <Card title="Real-time Sync" icon="refresh-cw" href="#">
+    Webhook support for instant updates when contact data changes.
+  </Card>
+  <Card title="Bulk Operations" icon="database" href="#">
+    Efficient batch processing for large contact datasets.
+  </Card>
+</Columns>
+
+## Authentication
+
+Secure your API requests using OAuth 2.0 or API key authentication methods.
+
+<Steps>
+  <Step title="Obtain API Key" icon="key">
+    Generate an API key from your Lazaar Haythem developer dashboard.
+  </Step>
+  <Step title="Configure Headers" icon="settings">
+    Include the API key in the Authorization header of your requests.
+  </Step>
+  <Step title="Test Connection" icon="check-circle">
+    Verify authentication by making a test API call.
+  </Step>
+</Steps>
+
+<Callout kind="info">API keys should be stored securely and rotated regularly for optimal security.</Callout>
+
+## Core Endpoints
+
+<Tabs>
+  <Tab title="Contacts" icon="users">
+    Manage contact records with full CRUD operations.
+    
+    <CodeGroup tabs="cURL,JavaScript">
+      ```bash
+curl -X GET \
+  'https://api.lazaarh.com/v1/contacts' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+      ```
+      ```javascript
+const response = await fetch('/api/contacts', {
+  headers: {
+    'Authorization': `Bearer ${apiKey}`
+  }
+});
+const contacts = await response.json();
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Webhooks" icon="webhook">
+    Set up real-time notifications for contact changes.
+    
+    <CodeGroup tabs="cURL,Python">
+      ```bash
+curl -X POST \
+  'https://api.lazaarh.com/v1/webhooks' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{"url": "https://your-app.com/webhook", "events": ["contact.created", "contact.updated"]}'
+      ```
+      ```python
+import requests
+
+webhook_data = {
+    'url': 'https://your-app.com/webhook',
+    'events': ['contact.created', 'contact.updated']
+}
+
+response = requests.post(
+    'https://api.lazaarh.com/v1/webhooks',
+    headers={'Authorization': f'Bearer {api_key}'},
+    json=webhook_data
+)
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="Bulk Operations" icon="database">
+    Process multiple contacts simultaneously for efficiency.
+    
+    <CodeGroup tabs="cURL,Node.js">
+      ```bash
+curl -X POST \
+  'https://api.lazaarh.com/v1/contacts/bulk' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '[{"name": "John Doe", "email": "john@example.com"}, {"name": "Jane Smith", "email": "jane@example.com"}]'
+      ```
+      ```javascript
+const bulkContacts = [
+  { name: 'John Doe', email: 'john@example.com' },
+  { name: 'Jane Smith', email: 'jane@example.com' }
+];
+
+const response = await fetch('/api/contacts/bulk', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${apiKey}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(bulkContacts)
+});
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Error Handling
+
+Implement robust error handling to ensure reliable API integration.
+
+<Expandable title="Common Error Codes" default-open="true">
+  | Error Code | Description |
+  |------------|-------------|
+  | `400` | Bad Request - Invalid data format |
+  | `401` | Unauthorized - Invalid API key |
+  | `403` | Forbidden - Insufficient permissions |
+  | `404` | Not Found - Resource does not exist |
+  | `429` | Too Many Requests - Rate limit exceeded |
+  | `500` | Internal Server Error - Server-side issue |
+</Expandable>
+
+<Expandable title="Rate Limiting" default-open="false">
+  API requests are limited to 1000 per hour per API key. Monitor the X-RateLimit-Remaining header to avoid hitting limits.
+</Expandable>
+
+<Callout kind="danger">Always handle API errors gracefully in your application to provide a smooth user experience.</Callout>
+
+## Webhook Security
+
+<ExpandableGroup>
+  <Expandable title="Webhook Verification">
+    Verify incoming webhooks using HMAC signatures to ensure they originate from Lazaar Haythem.
+  </Expandable>
+  <Expandable title="Idempotency Keys">
+    Use idempotency keys for webhook events to prevent duplicate processing.
+  </Expandable>
+  <Expandable title="Retry Logic">
+    Implement retry logic for failed webhook deliveries with exponential backoff.
+  </Expandable>
+</ExpandableGroup>
+
+## Best Practices
+
+<Steps>
+  <Step title="Use Pagination" icon="list">
+    Implement pagination for large contact lists to improve performance.
+  </Step>
+  <Step title="Cache Responses" icon="database">
+    Cache API responses appropriately to reduce unnecessary requests.
+  </Step>
+  <Step title="Monitor Usage" icon="bar-chart">
+    Track API usage and set up alerts for unusual activity.
+  </Step>
+  <Step title="Version Control" icon="git-branch">
+    Pin your integration to specific API versions for stability.
+  </Step>
+</Steps>
+
+<Callout kind="success">Following these integration best practices ensures reliable and efficient communication with the Lazaar Haythem API.</Callout>

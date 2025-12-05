@@ -1,0 +1,152 @@
+---
+title: User Guide
+description: Comprehensive guide for using Lazaar Haythem smart contacts management app effectively
+---
+
+## Getting Started with Lazaar Haythem
+
+This guide walks you through the essential features and workflows of Lazaar Haythem, helping you maximize the benefits of intelligent contact management.
+
+<Columns cols={2}>
+  <Card title="Basic Navigation" icon="compass" href="#navigation">
+    Learn the app's interface and core navigation elements.
+  </Card>
+  <Card title="Contact Management" icon="users" href="#management">
+    Master contact creation, editing, and organization.
+  </Card>
+</Columns>
+
+## App Navigation
+
+<Steps>
+  <Step title="Home Screen" icon="home">
+    The home screen displays your recently contacted individuals and suggested actions.
+  </Step>
+  <Step title="Contacts Tab" icon="users">
+    Browse all your contacts organized by categories and tags.
+  </Step>
+  <Step title="Search Bar" icon="search">
+    Use the search bar at the top for quick contact lookup.
+  </Step>
+  <Step title="Settings" icon="settings">
+    Access app settings through the menu to customize your experience.
+  </Step>
+</Steps>
+
+<Callout kind="tip">Pin frequently accessed contacts to the home screen for instant access.</Callout>
+
+## Managing Contacts
+
+### Adding New Contacts
+
+<Tabs>
+  <Tab title="Manual Entry" icon="plus">
+    Create contacts manually by entering their information.
+    
+    <Steps>
+      <Step title="Tap Add Button" icon="plus-circle">
+        Tap the plus icon in the contacts tab.
+      </Step>
+      <Step title="Enter Details" icon="edit">
+        Fill in name, phone, email, and other information.
+      </Step>
+      <Step title="Add Photo" icon="camera">
+        Upload a photo or use the camera to take one.
+      </Step>
+      <Step title="Save Contact" icon="save">
+        Tap save to add the contact to your database.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Import Options" icon="upload">
+    Import contacts from your device, email, or social media.
+    
+    <CodeGroup tabs="iOS,Android">
+      ```swift
+// iOS Import Example
+import Contacts
+
+let store = CNContactStore()
+store.requestAccess(for: .contacts) { granted, error in
+    if granted {
+        // Import contacts logic
+    }
+}
+      ```
+      ```kotlin
+// Android Import Example
+import android.provider.ContactsContract
+
+val cursor = contentResolver.query(
+    ContactsContract.Contacts.CONTENT_URI,
+    null, null, null, null
+)
+
+// Process cursor for contact data
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+### Organizing Contacts
+
+<Expandable title="Creating Categories" default-open="true">
+  Group contacts into categories like Family, Work, or Friends for better organization.
+</Expandable>
+
+<Expandable title="Using Tags" default-open="false">
+  Apply custom tags to contacts for flexible grouping and filtering options.
+</Expandable>
+
+<Expandable title="Smart Groups" default-open="false">
+  Let Lazaar Haythem automatically create groups based on interaction patterns and relationships.
+</Expandable>
+
+## Advanced Features
+
+<ExpandableGroup>
+  <Expandable title="Contact Merging">
+    Combine duplicate contacts automatically or manually to maintain data integrity.
+  </Expandable>
+  <Expandable title="Data Export">
+    Export your contacts in various formats including vCard, CSV, and JSON.
+  </Expandable>
+  <Expandable title="Backup and Restore">
+    Regularly backup your contact data and restore from backups when needed.
+  </Expandable>
+</ExpandableGroup>
+
+## Communication Integration
+
+Lazaar Haythem integrates with your favorite communication apps to provide a unified contact experience.
+
+<Steps>
+  <Step title="Link Accounts" icon="link">
+    Connect your email and messaging accounts in settings.
+  </Step>
+  <Step title="Sync Data" icon="refresh-cw">
+    Allow the app to sync contact information from linked accounts.
+  </Step>
+  <Step title="View History" icon="clock">
+    Access communication history directly from contact profiles.
+  </Step>
+</Steps>
+
+<Callout kind="info">Integration requires granting appropriate permissions to ensure secure data access.</Callout>
+
+## Troubleshooting
+
+<Expandable title="Common Issues" default-open="true">
+  | Issue | Solution |
+  |-------|----------|
+  | Contacts not syncing | Check account permissions and internet connection |
+  | Duplicate contacts | Use the merge feature in the contacts tab |
+  | Search not working | Ensure search index is up to date in settings |
+  | App crashing | Clear app cache or reinstall the latest version |
+</Expandable>
+
+<Expandable title="Getting Help" default-open="false">
+  If you encounter persistent issues, contact our support team through the app's help section.
+</Expandable>
+
+<Callout kind="success">By following this guide, you'll be able to leverage all the powerful features of Lazaar Haythem for efficient contact management.</Callout>

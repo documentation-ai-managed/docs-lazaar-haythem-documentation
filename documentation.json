@@ -1,0 +1,80 @@
+{
+  "name": "Lazaar Haythem Documentation",
+  "initialRoute": "introduction",
+  "primaryColor": "#3B82F6",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "rocket",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "introduction",
+                "icon": "star"
+              }
+            ]
+          },
+          {
+            "group": "Core Features",
+            "icon": "lightbulb",
+            "pages": [
+              {
+                "title": "Features",
+                "path": "features",
+                "icon": "zap"
+              }
+            ]
+          },
+          {
+            "group": "Integration",
+            "icon": "code",
+            "pages": [
+              {
+                "title": "API Integration",
+                "path": "api-integration",
+                "icon": "terminal"
+              }
+            ]
+          },
+          {
+            "group": "User Guide",
+            "icon": "book-open",
+            "pages": [
+              {
+                "title": "User Guide",
+                "path": "user-guide",
+                "icon": "help-circle"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "openapi": "openapi.yaml"
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "clock",
+        "pages": [
+          {
+            "title": "Release History",
+            "path": "changelog",
+            "icon": "history"
+          }
+        ]
+      }
+    ]
+  }
+}
